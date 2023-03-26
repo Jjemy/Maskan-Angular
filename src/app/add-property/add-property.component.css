@@ -1,0 +1,61 @@
+:host::ng-deep .p-card{
+    max-width: 930px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 180px;
+    margin-bottom: 120px;
+    border: 1px solid #ED5757;
+    border-radius: 20px;
+}
+
+:host::ng-deep .p-card-title{
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #ED5757;
+}
+
+.row{
+    margin-left: 47px;
+}
+
+input{
+    padding-left: 16px;
+    padding-top: 11px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+    height: 40px;
+    margin-right: 16px;
+    margin-top: 18px;
+    width: 100%;
+    border: 1px solid #767676;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #424242;
+}
+
+:host::ng-deep .p-button{
+    margin-top: 16px;
+    min-width: 133px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.p-button-danger{
+    margin-left: 70px;
+}
