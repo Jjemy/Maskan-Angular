@@ -65,11 +65,18 @@
                         Required
                     </div>
                 </div>
-                <div class="col-6 col-lg-4">
-                    <input placeholder ="Type" type="number" formControlName="Type">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('Type').touched && this.SellForm.get('Type').hasError('required')">
-                        Required
-                    </div>
+                <div class="col-6 col-lg-4 d-flex align-items-end">
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="flex align-items-center">
+                            <p-radioButton name="Type" value=0 inputId="ingredient1" formControlName="Type"></p-radioButton>
+                            <label for="ingredient1" class="ml-2">Rental</label>
+                        </div>
+                        
+                        <div class="flex align-items-center">
+                            <p-radioButton name="Type" value=1 inputId="ingredient2" formControlName="Type"></p-radioButton>
+                            <label for="ingredient2" class="ml-2">Purchase</label>
+                        </div>
+                    </div>                    
                 </div>
                 <div class="col-6 col-lg-4">
                     <input placeholder ="Level" type="text" formControlName="Level">

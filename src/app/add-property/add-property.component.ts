@@ -20,14 +20,27 @@ export class AddPropertyComponent {
   seller:Seller;
   property:Property
 
+  isRental: boolean = false;
+  isPurchase: boolean = false;
+
+  toggleCheckboxes(event: any) {
+    if (event.target.checked) {
+      this.isRental = true;
+      this.isPurchase = false;
+    } else {
+      this.isRental = false;
+      this.isPurchase = true;
+    }
+  }
+
   addProperty(){
+    this.Form=Object.assign({},this.SellForm.value);
+    let {SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID}=this.Form;
+    let {Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price}=this.Form;
+    this.seller={SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID};
+    this.property={Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price};
+    console.log(this.seller,this.property);
     if(this.SellForm.valid){
-      this.Form=Object.assign({},this.SellForm.value);
-      let {SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID}=this.Form;
-      let {Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price}=this.Form;
-      this.seller={SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID};
-      this.property={Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price};
-      console.log(this.seller,this.property);
       /* this.propertyService.AddProperty(this.property).subscribe(
         ()=>{
           this.router.navigate(['/']);

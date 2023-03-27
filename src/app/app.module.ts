@@ -12,7 +12,7 @@ import { PropertyService } from './Services/property.service';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {CheckboxModule} from 'primeng/checkbox'
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {CheckboxModule} from 'primeng/checkbox'
     ReactiveFormsModule,
     CardModule,
     ButtonModule,
-    CheckboxModule
+    RadioButtonModule
   ],
   providers: [
     PropertyService
