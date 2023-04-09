@@ -12,14 +12,16 @@ import { PropertyService } from './Services/property.service';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {CheckboxModule} from 'primeng/checkbox'
+import {CheckboxModule} from 'primeng/checkbox';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPropertyComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
