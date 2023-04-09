@@ -194,7 +194,7 @@ body {
 }
   .navbar-default {
     transition: all .5s ease-in-out;
-    background-color: #ffffff;
+    background-color: #e0dcdc;
     padding-top: 28px;
     padding-bottom: 28px;
     -webkit-backface-visibility: hidden;
