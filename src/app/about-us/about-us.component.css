@@ -14,13 +14,12 @@ body {
   }
   
   a {
-    color: #ec0d0d;
+    color: #000000;
     transition: all .5s ease;
-    text-decoration: none;
   }
   
   a:hover {
-    color: #ec6b6b;
+    color: #ED5757;
     text-decoration: none;
   }
   
@@ -72,13 +71,13 @@ body {
   }
   
   .text-brand {
-    color: #ED5757;
+    color: #000000;
     font-size: 2rem;
     font-weight: 600;
   }
   
   .color-a {
-    color: #ED5757;
+    color: #000000;
   }
   
   .color-b {
@@ -97,33 +96,7 @@ body {
     margin: 0;
   }
   
-  /*------/ Nav Pills  /------*/
-  
-  .nav-pills-a.nav-pills .nav-link {
-    color: #000000;
-    position: relative;
-    font-weight: 600;
-  }
-  
-  .nav-pills-a.nav-pills .nav-link.active {
-    background-color: transparent;
-  }
-  
-  .nav-pills-a.nav-pills .nav-link.active:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 2px;
-    background-color: #ED5757;
-    z-index: 2;
-  }
-  
 
-  
-  /*------/ List a /------*/
-  
   .list-a {
     display: inline-block;
     line-height: 2;
@@ -149,12 +122,7 @@ body {
     left: 0;
   }
  
-  
-  .a {
-    color: #ED5757;
-    font-size: 1.3rem;
-  }
-  
+
   /*------/ Space Padding /------*/
   
   .section-t8 {
@@ -177,63 +145,446 @@ body {
     padding: 8rem 0 5rem 0;
   }
   
+  /*------/ Title /------*/
+  
+  .title-wrap {
+    padding-bottom: 4rem;
+  }
+  
+  .title-a {
+    font-size: 2.6rem;
+    font-weight: 600;
+  }
+  
+  .title-link {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-top: 1.2rem;
+  }
+  
+  .title-link a {
+    color: #313131;
+  }
+  
+  .title-link span {
+    font-size: 20px;
+    padding-left: 4px;
+    vertical-align: middle;
+  }
+  
+  .title-box-d {
+    padding-bottom: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .title-box-d .title-d {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  
+  .title-box-d .title-d:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background-color: #ED5757;
+    bottom: 20px;
+    left: 0;
+  }
+  .overlay-a {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
   
 
-  /*------/ Ul Resect /------*/
+  /*------/ Intro Single /------*/
   
-  .ul-resect ul,
-  .list-a ul,
-  .box-comments ul {
-    list-style: none;
+  .intro-single {
+    padding: 12rem 0 3rem;
+  }
+  
+  .intro-single .title-single-box {
+    padding: 1rem 0 1rem 2rem;
+  }
+  
+  .intro-single .title-single-box {
+    border-left: 3px solid #ED5757;
+  }
+  
+  .intro-single .title-single-box .title-single {
+    font-weight: 600;
+    font-size: 2.2rem;
+  }
+  
+  .intro-single .breadcrumb-box {
+    padding: 1rem 0 0 .5rem;
+  }
+  
+  .intro-single .breadcrumb {
+    background-color: transparent;
+    padding-right: 0;
     padding-left: 0;
+  }
+  
+  /*======================================
+  //--//-->   CARD GENERAL
+  ======================================*/
+  
+  .card-box-a,
+  .card-box-b,
+  .card-box-d {
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .card-box-a .img-a,
+  .card-box-a .img-b,
+  .card-box-b .img-a,
+  .card-box-b .img-b {
+    transition: .8s all ease-in-out;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .card-shadow {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .card-shadow:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
+  }
+  
+  /*======================================
+  //--//-->   PROPERTY - CARD-A
+  ======================================*/
+  
+  .card-overlay-a-content {
+    transition: all .5s ease-in;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: 2;
+  }
+  
+  .card-header-a {
+    padding: 0 1rem;
+  }
+  
+  .card-header-a .card-title-a {
+    color: #ffffff;
     margin-bottom: 0;
+    padding-bottom: .7rem;
+  }
+  
+  .card-header-a .card-title-a a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .card-body-a {
+    z-index: 2;
+    transition: all .5s ease-in;
+    padding: 0rem 1rem 2rem 1rem;
+  }
+  
+  .card-body-a .price-box {
+    padding-bottom: .5rem;
+  }
+  
+  .price-a {
+    color: #ffffff;
+    padding: .6rem .8rem;
+    border: 2px solid #ED5757;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.030em;
+  }
+  
+  .card-footer-a {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #ED5757;
+  }
+  
+  .card-info {
+    list-style: none;
+    margin-bottom: 0;
+    padding: .5rem 0;
+  }
+  
+  .card-info .card-info-title {
+    font-size: 1rem;
+    color: #313131;
+  }
+  
+  .card-info li span {
+    color: #ffffff;
+    font-size: .9rem;
+  }
+ 
+  
+  .card-header-b {
+    padding: 1rem;
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+  }
+  
+  .card-header-b .category-b {
+    font-size: .9rem;
+    background-color: #ED5757;
+    padding: .3rem .7rem;
+    color: #313131;
+    letter-spacing: 0.030em;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  
+  .card-header-b .title-2 {
+    margin-bottom: 0;
+    padding: .6rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .card-header-b .title-2 a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .card-header-b .date-b {
+    color: #d8d8d8;
+    font-size: 1rem;
+  }
+  
+  
+  .box-comments .list-comments li {
+    padding-bottom: 3.5rem;
+  }
+  
+  .box-comments .list-comments .comment-avatar {
+    display: table-cell;
+    vertical-align: top;
+  }
+  
+  .box-comments .list-comments .comment-avatar img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .box-comments .list-comments .comment-author {
+    font-size: 1.3rem;
+  }
+  
+  .box-comments .list-comments .comment-details {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 25px;
+  }
+  
+  .box-comments .list-comments .comment-description {
+    padding: .8rem 0 .5rem 0;
+  }
+  
+  .box-comments .list-comments a {
+    color: #000000;
+  }
+  
+  .box-comments .list-comments span {
+    display: block;
+    color: #2B2A2A;
+    font-style: italic;
+  }
+  
+  .box-comments .comment-children {
+    margin-left: 40px;
   }
   
   /*======================================
-  //--//-->   FOOTER
+  //--//-->   SERVICES - CARD-C
   ======================================*/
   
-  .section-footer {
-    padding-top: 10px;
-    margin-top: 10px;
-    background: #cac7c7;
-    height: 100px;
+  .card-box-c {
+    position: relative;
   }
   
-  .section-footer ul {
-    line-height: 2;
+  .card-header-c {
+    padding: 0 1rem 1rem 1rem;
   }
   
-  .section-footer .item-list-a i {
-    font-size: 22px;
-    padding-right: 4px;
-    color: #ED5757;
+  .card-body-c {
+    padding: .5rem .5rem 0 .5rem;
   }
   
-  .section-footer .widget-a .w-title-a {
-    margin-bottom: 1rem;
+  .card-footer-c {
+    padding-left: .5rem;
   }
   
-  footer {
-    background: #cac7c7;
-    text-align: center;
-    padding: 30px 0;
-    height: 130px;
+  .card-box-ico {
+    padding: 1rem 3rem 1rem 2.5rem;
+    border: 5px solid #ED5757;
   }
   
-  footer .copyright-footer {
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+  .card-box-ico span {
+    font-size: 4rem;
+    color: #000000;
   }
   
-  footer .credits {
-    font-size: 14px;
+  .title-c {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: -40px;
+  }
+  
+
+  
+  .card-box-d .card-overlay-hover {
+    transition: all .2s ease-in-out;
+    padding: 15px 40px 15px 35px;
+  }
+  
+  .card-box-d .title-d {
+    transition: .3s ease-in-out;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  
+  .card-box-d .content-d {
+    opacity: 0;
+    transition: .5s ease-in-out;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  
+  .card-box-d .info-agents {
+    opacity: 0;
+    transition: .5s ease-in-out;
+  }
+  
+  .card-box-d .card-footer-d {
+    transition: .5s ease-in-out;
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+  }
+  
+  .card-box-d .list-inline-item:not(:last-child) {
+    margin-right: 25px;
+  }
+  
+  .card-box-d:hover .card-overlay-hover {
+    background-color: #ED5757;
+    opacity: .9;
+  }
+  
+  .card-box-d:hover .title-d,
+  .card-box-d:hover .content-d,
+  .card-box-d:hover .info-agents,
+  .card-box-d:hover .card-footer-d {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  
+  /*------/ Agent Single /------*/
+  
+  .agent-info-box .socials-footer {
+    margin-top: 2rem;
+  }
+  
+  .agent-info-box .socials-footer li {
+    margin-right: 1.5rem;
   }
   
   /*======================================
-  //--//-->   FORM INPUT
+  //--//-->   ABOUT
   ======================================*/
   
+  .section-about .title-vertical {
+    position: absolute;
+    letter-spacing: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 50px;
+    text-align: left;
+    font-size: 1.8rem;
+    width: 300px;
+    font-weight: 700;
+    text-align: right;
+  }
+  
+  .about-img-box {
+    padding-left: 1rem;
+    position: relative;
+  }
+  
+  .sinse-box {
+    background-color: #ED5757;
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+  }
+  
+  .sinse-box .sinse-title {
+    font-weight: 700;
+    letter-spacing: 0.043em;
+    font-size: 1rem;
+  }
+  
+  .sinse-box .sinse-title span {
+    position: absolute;
+  }
+  
+  .sinse-box .sinse-title span:after {
+    content: ' ';
+    width: 35px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -15px;
+  }
+  
+  .sinse-box p {
+    margin-bottom: 0;
+    font-size: .7rem;
+  }
+ 
+
   @media (min-width: 576px) {
     .intro .intro-title {
       font-size: 3.5rem;
@@ -605,5 +956,5 @@ body {
     }
   }
 section{
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 }
