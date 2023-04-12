@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Property } from '../Models/property';
 import { Seller } from '../Models/seller';
 import { PropertyService } from '../Services/property.service';
 import { Router } from '@angular/router';
+import { AdminService } from '../Services/admin.service';
+import { HttpClient } from '@angular/common/http';
+import { ModelInput } from '../Models/model-input';
+import { UserService } from '../Services/user.service';
+import { Images } from '../Models/images';
 
 @Component({
   selector: 'app-add-property',
@@ -12,14 +17,26 @@ import { Router } from '@angular/router';
 })
 export class AddPropertyComponent {
 
-  constructor(private propertyService:PropertyService, private router:Router, private fb:FormBuilder) { }
+  constructor(private http:HttpClient, private propertyService:PropertyService,private adminService: AdminService,
+    private userService:UserService, private router:Router, private fb:FormBuilder) { }
 
   errMsg="";
   SellForm:FormGroup;
   Form:any;
+  sellers:Seller[];
   seller:Seller;
-  property:Property
-
+  property:Property;
+  modelInput:ModelInput;
+  image:Images={
+    imageLink:"link",
+    propertyID:0
+  };
+  regions:any[];
+  categories:any[];
+  regNames:string[]=[];
+  displayedReg:string;
+  price:number=0;
+  submitted:boolean=false;
   isRental: boolean = false;
   isPurchase: boolean = false;
 
@@ -33,62 +50,121 @@ export class AddPropertyComponent {
     }
   }
 
-  addProperty(){
+  async addProperty(){
+    this.submitted=true;
     this.Form=Object.assign({},this.SellForm.value);
-    let {SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID}=this.Form;
-    let {Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price}=this.Form;
-    this.seller={SellerName, SellerEmail, PhoneNum, SellerAddress, NationalID};
-    this.property={Location, GoogleMapsLink, Type, Level, Furnished, Region, Area, RoomsNum, BathsNum, Price};
-    console.log(this.seller,this.property);
+    this.Form.dealTypeID=this.Form.DealType=="Rental"?1:2;
+    this.Form.Furnished=this.Form.Furnished=="true"?true:false;
+    this.Form.Type=this.Form.Type.label;
+    let {sellerName, sellerEmail, phoneNum, sellerAddress, nationalID}=this.Form;
+    let {Location, GoogleMapsLink, Type, Level, Furnished, Area, RoomsNum, BathsNum, Price, dealTypeID}=this.Form;
+    this.seller={sellerName, sellerEmail, phoneNum, sellerAddress, nationalID};
+    this.property={Location, GoogleMapsLink, Type, Level, Furnished, Area, RoomsNum, BathsNum, Price, dealTypeID, sellerID:0};
     if(this.SellForm.valid){
-      /* this.propertyService.AddProperty(this.property).subscribe(
-        ()=>{
-          this.router.navigate(['/']);
-        },(error)=>{
-          this.errMsg=error.error;
+      if(this.sellers.find(a=>a.nationalID==this.Form.nationalID)){
+        this.sellers.forEach(seller => {
+          if(seller.nationalID==this.Form.nationalID){
+            this.property.sellerID=seller.sellerID;
+          }
+        });
+      }
+      else{
+        try {
+          const seller = await this.userService.AddSeller(this.seller).toPromise();
+          this.property.sellerID = (seller as any).sellerID;
+          console.log(this.property);
+        } catch (error) {
+          this.errMsg = error.error;
         }
-      ) */
+      }
+      try {
+        const a = await this.propertyService.AddProperty(this.property).toPromise();
+        this.Form.imageLinks.forEach(async image => {
+          this.image.imageLink = image;
+          this.image.propertyID = (a as any).propertyID;
+          await this.propertyService.AddImage(this.image).toPromise();
+        });
+        alert("Done");
+        this.router.navigate(['/']);
+      } catch (error) {
+        this.errMsg = error.error;
+      }
     }
-    else{
+    else{ 
       let propertyInvalid=[];
-      let sellerInvalid=[];
       let propertyControls=this.SellForm.controls;
-      let sellerControls=this.SellForm.controls;
-      for (const name in propertyControls){
+      for (const name in this.SellForm.controls){
         if(propertyControls[name].invalid){
           propertyInvalid.push(name);
         }
       }
-      for(const name in sellerControls){
-        if(sellerControls[name].invalid){
-          sellerInvalid.push(name);
-        }
-      }
-      console.log(propertyInvalid,sellerInvalid);
+      console.log(propertyInvalid);
     }
+  }
+
+  predictPrice(){
+    this.submitted=true;
+    this.SellForm.get('Price').markAsPristine();
+    this.SellForm.get('Price').setErrors(null);
+    this.Form=Object.assign({},this.SellForm.value);
+    this.Form.Furnished=this.Form.Furnished="true"?true:false;
+    let Furnished=this.Form.Furnished==true?1:0;
+    let DealType=this.Form.Type=="Rental"?1:0;
+    let Region=this.Form.Region.value;
+    let Type=this.Form.Type.value;
+    let {Level, Area, RoomsNum, BathsNum}=this.Form;
+    this.modelInput={Type, Level, Furnished, Area, RoomsNum, BathsNum, Region, DealType};
+    this.propertyService.predictPrice(this.modelInput).subscribe(a=>
+      this.price=parseInt(Object.values(a)[0])
+    );
+  }
+
+  get Images(){
+    return this.SellForm.get('imageLinks') as FormArray
+  }
+
+  addImage(){
+    this.Images.push(new FormControl);
+  }
+
+  removeImage(i?:number){
+    this.Images.removeAt(i);
   }
 
   createSellForm(){
     this.SellForm=this.fb.group({
-      SellerName:['',Validators.required],
-      SellerEmail:['', [Validators.email, Validators.required]],
-      PhoneNum:['',[Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(12)]],
-      SellerAddress:['',Validators.required],
-      NationalID:['',[Validators.pattern("^[0-9]*$"), Validators.required, Validators.minLength(10)]],
+      sellerName:['',Validators.required],
+      sellerEmail:['', [Validators.email, Validators.required]],
+      phoneNum:['',[Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(12)]],
+      sellerAddress:['',Validators.required],
+      nationalID:['',[Validators.pattern("^[0-9]*$"), Validators.required, Validators.minLength(10)]],
       Location:['',Validators.required],
       GoogleMapsLink:['',Validators.nullValidator],
+      DealType:['', Validators.required],
       Type:['', Validators.required],
-      Level:['', Validators.required],
+      Level:['', [Validators.required, Validators.max(80), Validators.min(0)]],
       Furnished:['', Validators.required],
       Region:['', Validators.required],
       Area:['', Validators.required],
       RoomsNum:['', Validators.required],
       BathsNum:['', Validators.required],
       Price:['', Validators.required],
+      VrLink:['',Validators.nullValidator],
+      dealTypeID: ['', Validators.nullValidator],
+      imageLinks: new FormArray([],Validators.required)
     })
   }
 
   ngOnInit(): void {
+    this.http.get('../../assets/regions.json').subscribe((data: any) => {
+      this.regions = data.regions;
+    });
+    this.http.get('../../assets/Type.json').subscribe((data: any) => {
+      this.categories = data.categories;
+    });
+    this.userService.GetSellers().subscribe(a=>
+      this.sellers=Object.values(a)
+    )
     this.createSellForm();
   }
 }

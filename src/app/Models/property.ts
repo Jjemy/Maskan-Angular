@@ -5,8 +5,9 @@ export interface Property {
     Price:number,
     RoomsNum:number,
     BathsNum:number,
-    Type:number,
+    Type:string,
     Level:number,
-    Furnished:number,
-    Region:number
+    Furnished:boolean,
+    dealTypeID:number,
+    sellerID:number
 }

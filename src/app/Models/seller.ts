@@ -1,7 +1,8 @@
 export interface Seller {
-    SellerName:string,
-    SellerAddress:string,
-    SellerEmail:string,
-    PhoneNum:string,
-    NationalID:string
+    sellerID?:number,
+    sellerName:string,
+    sellerAddress:string,
+    sellerEmail:string,
+    phoneNum:string,
+    nationalID:string
 }

@@ -1,0 +1,17 @@
+{"categories":[
+  {
+    "label": "apartment","value": 0
+  },
+  {
+  "label": "duplex","value": 1
+  },
+  {
+   "label":  "penthouse","value": 2
+  },
+  {
+   "label" : "studio","value": 4
+  },
+  {
+    "label": "room","value": 3
+  }
+]}

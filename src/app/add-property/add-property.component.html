@@ -4,47 +4,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 col-lg-4">
-                    <input placeholder ="Name" type="text" formControlName="SellerName">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('SellerName').touched && this.SellForm.get('SellerName').hasError('required')">
+                    <input placeholder ="Name" type="text" formControlName="sellerName">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('sellerName').touched && this.SellForm.get('sellerName').hasError('required')">
                         Required
                     </div>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <input placeholder ="Email Address" type="email" formControlName="SellerEmail">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('SellerEmail').touched && this.SellForm.get('SellerEmail').hasError('required')">
+                    <input placeholder ="Email Address" type="email" formControlName="sellerEmail">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('sellerEmail').touched && this.SellForm.get('sellerEmail').hasError('required')">
                         Required
                     </div>
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('SellerEmail').touched && this.SellForm.get('SellerEmail').hasError('email')">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('sellerEmail').touched && this.SellForm.get('sellerEmail').hasError('email')">
                         Please Enter a valid email address
                     </div>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <input placeholder ="Phone Number" type="text" formControlName="PhoneNum">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('PhoneNum').hasError('pattern')">
+                    <input placeholder ="Phone Number" type="text" formControlName="phoneNum">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('phoneNum').hasError('pattern')">
                         Please Enter a Valid Phone Number
                     </div>
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('PhoneNum').hasError('maxlength')">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('phoneNum').hasError('maxlength')">
                         Maximum length is 12 NumbersPhoneNum
                     </div>
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('PhoneNum').hasError('minlength')">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('phoneNum').hasError('minlength')">
                         Minimum length is 10 Numbers
                     </div>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <input placeholder ="Address" type="text" formControlName="SellerAddress">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('SellerAddress').touched && this.SellForm.get('SellerAddress').hasError('required')">
+                    <input placeholder ="Address" type="text" formControlName="sellerAddress">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('sellerAddress').touched && this.SellForm.get('sellerAddress').hasError('required')">
                         Required
                     </div>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <input placeholder ="National ID" type="text" formControlName="NationalID">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('NationalID').touched && this.SellForm.get('NationalID').hasError('required')">
+                    <input placeholder ="National ID" type="text" formControlName="nationalID">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('nationalID').touched && this.SellForm.get('nationalID').hasError('required')">
                         Required
                     </div>
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('NationalID').hasError('pattern')">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('nationalID').hasError('pattern')">
                         Please Enter a Valid National ID
                     </div>
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('NationalID').hasError('minlength')">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('nationalID').hasError('minlength')">
                         Minimum length is 10 Numbers
                     </div>
                 </div>
@@ -61,33 +61,99 @@
                 </div>
                 <div class="col-6 col-lg-4">
                     <input placeholder ="Google Maps Link" type="text" formControlName="GoogleMapsLink">
-                    <div style="color: crimson;" *ngIf="this.SellForm.get('GoogleMapsLink').touched && this.SellForm.get('GoogleMapsLink').hasError('required')">
+                </div>
+                <div class="col-6 col-lg-4">
+                    <input placeholder ="VR Link" type="text" formControlName="VrLink">
+                </div>
+                <div class="col-6 col-lg-4">
+                    <input placeholder ="Level" type="number" formControlName="Level">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Level').touched && this.SellForm.get('Level').hasError('required')">
+                        Required
+                    </div>
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Level').touched && this.SellForm.get('Level').hasError('max')">
+                        Maximum number of levels is 80.
+                    </div>
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Level').touched && this.SellForm.get('Level').hasError('min')">
+                        You can't enter negative numbers.
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end">
+                    <p-dropdown [options]="regions" optionLabel="label" formControlName="Region" [filter]="true" filterBy="label" placeholder="Select a Country"></p-dropdown>
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Region').touched && this.SellForm.get('Region').hasError('required')">
+                        Required
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end">
+                    <p-dropdown [options]="categories" optionLabel="label" formControlName="Type" [filter]="true" filterBy="label" placeholder="Select a Category"></p-dropdown>
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Type').touched && this.SellForm.get('Type').hasError('required')">
+                        Required
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <input placeholder ="Area in square metre" type="number" formControlName="Area">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Area').touched && this.SellForm.get('Area').hasError('required')">
+                        Required
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <input placeholder ="Rooms Number" type="number" formControlName="RoomsNum">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('RoomsNum').touched && this.SellForm.get('RoomsNum').hasError('required')">
+                        Required
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <input placeholder ="Baths Number" type="number" formControlName="BathsNum">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('BathsNum').touched && this.SellForm.get('BathsNum').hasError('required')">
                         Required
                     </div>
                 </div>
                 <div class="col-6 col-lg-4 d-flex align-items-end">
                     <div class="d-flex flex-wrap gap-3">
                         <div class="flex align-items-center">
-                            <p-radioButton name="Type" value=0 inputId="ingredient1" formControlName="Type"></p-radioButton>
+                            <p-radioButton name="DealType"  value="Rental" formControlName="DealType"></p-radioButton>
                             <label for="ingredient1" class="ml-2">Rental</label>
                         </div>
-                        
                         <div class="flex align-items-center">
-                            <p-radioButton name="Type" value=1 inputId="ingredient2" formControlName="Type"></p-radioButton>
+                            <p-radioButton name="DealType" value="Purchase" formControlName="DealType"></p-radioButton>
                             <label for="ingredient2" class="ml-2">Purchase</label>
+                        </div>
+                        <div style="color: crimson;" *ngIf="submitted && this.SellForm.get('DealType').hasError('required')">
+                            Required
                         </div>
                     </div>                    
                 </div>
-                <div class="col-6 col-lg-4">
-                    <input placeholder ="Level" type="text" formControlName="Level">
+                <div class="col-6 col-lg-4 d-flex align-items-end mt-3">
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="flex align-items-center">
+                            <p-radioButton name="Furnished" value=true formControlName="Furnished"></p-radioButton>
+                            <label for="ingredient1" class="ml-2">Furnished</label>
+                        </div>
+                        <div class="flex align-items-center">
+                            <p-radioButton name="Furnished" value=false formControlName="Furnished"></p-radioButton>
+                            <label for="ingredient2" class="ml-2">Not Furnished</label>
+                        </div>
+                        <div style="color: crimson;" *ngIf="submitted && this.SellForm.get('Furnished').hasError('required')">
+                            Required
+                        </div>
+                    </div>   
                 </div>
-                <div class="col-6 col-lg-4"><input placeholder ="Furnished" type="text" formControlName="Furnished"></div>
-                <div class="col-6 col-lg-4"><input placeholder ="Region" type="text" formControlName="Region"></div>
-                <div class="col-6 col-lg-4"><input placeholder ="Area" type="text" formControlName="Area"></div>
-                <div class="col-6 col-lg-4"><input placeholder ="Rooms Number" type="text" formControlName="RoomsNum"></div>
-                <div class="col-6 col-lg-4"><input placeholder ="Baths Number" type="text" formControlName="BathsNum"></div>
-                <div class="col-4 col-lg-2"><input placeholder ="Price" type="text" formControlName="Price"></div>
-                <div class="col-4 col-lg-2"><p-button label="Predict Price"></p-button></div>
+                <div *ngFor="let item of Images.controls;let i=index" formArrayName="imageLinks" class="col-12" style="padding: 0 !important;">
+                    <div class="row" style="margin-left: 0 !important;">
+                        <div class="col-8 col-lg-4">
+                            <input type="text" [formControlName]="i" placeholder="Image Link">
+                        </div>
+                        <div class="col-4 col-lg-2"><button pButton pRibble label="Delete" (click)="removeImage()" class="p-button-danger" style="margin-left: 0 !important;"></button></div>
+                    </div>
+                </div>
+                <div><p-button label="Add image link" (click)="addImage()"></p-button></div>
+                <br>
+                <div class="col-4 col-lg-2">
+                    <input placeholder ="Price in EGP" type="number" [value]="price" formControlName="Price">
+                    <div style="color: crimson;" *ngIf="this.SellForm.get('Price').touched && this.SellForm.get('Price').hasError('required')">
+                        Required
+                    </div>
+                </div>
+                <div class="col-4 col-lg-2"><p-button (onClick)="predictPrice()" label="Predict Price"></p-button></div>
             </div>
         </div>
         <button pButton pRipple label="Submit" type="submit" icon="pi pi-check" class="p-button-danger"></button>

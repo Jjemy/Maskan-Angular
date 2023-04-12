@@ -15,4 +15,8 @@ export class UserService {
   AddSeller(seller:Seller) {
     return this.http.post(this.URL+"Seller",seller);
   }
+
+  GetSellers(){
+    return this.http.get(this.URL+"Seller");
+  }
 }
