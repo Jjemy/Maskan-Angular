@@ -46,23 +46,22 @@
             </div>
           </div>
         </div>
-        <div id="property-carousel" class="owl-carousel owl-theme">
-          <div class="carousel-item-b" >
+        <div id="property-carousel" class="owl-carousel owl-theme" >    
+         <div  class="carousel-item-b" >
             <div class="card-box-a card-shadow" >
-              <div class="img-box-a">
-                <img src="https://www.build-review.com/wp-content/uploads/2020/07/luxury-real-estate.jpg"  alt="property-1" class="img-a img-fluid">
+              <div class="img-box-a" >
+                <img [src]="img[0]" alt="" class="img-a img-fluid">
               </div>
               <div class="card-overlay">
                 <div class="card-overlay-a-content">
                   <div class="card-header-a">
                     <h2 class="card-title-a">
-                      <a href="property-single.html">Smouha
-                        <br /> Alexandria</a>
+                      <a href="property-single.html">{{loc[0]}}</a>
                     </h2>
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">rent |  12.000</span>
+                      <span class="price-a" >{{deal[0]}} | {{price[0]}}</span>
                     </div>
                     <a href="#" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
@@ -71,123 +70,121 @@
                   <div class="card-footer-a">
                     <ul class="card-info d-flex justify-content-around">
                       <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
+                        <h4 class="card-info-title" >Area</h4>
+                        <span >{{area[0]}}m
                           <sup>2</sup>
                         </span>
                       </li>
                       <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
+                        <h4 class="card-info-title" >Beds</h4>
+                        <span >{{rooms[0]}}</span>
                       </li>
                       <li>
                         <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
+                        <span >{{brooms[0]}}</span>
                       </li>
                       <li>
                         <h4 class="card-info-title">Level</h4>
-                        <span>1</span>
+                        <span >{{level[0]}}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-          <div class="carousel-item-b">
-            <div class="card-box-a card-shadow">
+         </div>
+         <div  class="carousel-item-b" >
+            <div class="card-box-a card-shadow" >
               <div class="img-box-a" >
-                <img src="https://www.build-review.com/wp-content/uploads/2020/07/luxury-real-estate.jpg" alt="" class="img-a img-fluid" >
+                <img [src]="img[1]" alt="" class="img-a img-fluid">
               </div>
               <div class="card-overlay">
                 <div class="card-overlay-a-content">
                   <div class="card-header-a">
                     <h2 class="card-title-a">
-                      <a href="property-single.html">Bakus
-                        <br /> Alexandria</a>
+                      <a href="property-single.html">{{loc[1]}}</a>
                     </h2>
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">rent |  12.000</span>
+                      <span class="price-a" >{{deal[1]}} | {{price[1]}}</span>
                     </div>
-                    <a href="property-single" class="link-a">Click here to view
+                    <a href="#" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
                     </a>
                   </div>
                   <div class="card-footer-a">
                     <ul class="card-info d-flex justify-content-around">
                       <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
+                        <h4 class="card-info-title" >Area</h4>
+                        <span >{{area[1]}}m
                           <sup>2</sup>
                         </span>
                       </li>
                       <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
+                        <h4 class="card-info-title" >Beds</h4>
+                        <span >{{rooms[1]}}</span>
                       </li>
                       <li>
                         <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
+                        <span >{{brooms[1]}}</span>
                       </li>
                       <li>
-                        <h4 class="card-info-title">level</h4>
-                        <span>1</span>
+                        <h4 class="card-info-title">Level</h4>
+                        <span >{{level[1]}}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-          <div class="carousel-item-b" >
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="https://www.build-review.com/wp-content/uploads/2020/07/luxury-real-estate.jpg" alt="" class="img-a img-fluid">
+         </div>
+         <div  class="carousel-item-b" >
+            <div class="card-box-a card-shadow" >
+              <div class="img-box-a" >
+                <img [src]="img[2]" alt="" class="img-a img-fluid">
               </div>
               <div class="card-overlay">
                 <div class="card-overlay-a-content">
                   <div class="card-header-a">
                     <h2 class="card-title-a">
-                      <a href="property-single">Zamalek
-                        <br /> Cairo</a>
+                      <a href="property-single.html">{{loc[2]}}</a>
                     </h2>
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">rent |  12.000</span>
+                      <span class="price-a" >{{deal[2]}} | {{price[2]}}</span>
                     </div>
-                    <a href="property-single" class="link-a">Click here to view
+                    <a href="#" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
                     </a>
                   </div>
                   <div class="card-footer-a">
                     <ul class="card-info d-flex justify-content-around">
                       <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
+                        <h4 class="card-info-title" >Area</h4>
+                        <span >{{area[2]}}m
                           <sup>2</sup>
                         </span>
                       </li>
                       <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
+                        <h4 class="card-info-title" >Beds</h4>
+                        <span >{{rooms[2]}}</span>
                       </li>
                       <li>
                         <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
+                        <span >{{brooms[2]}}</span>
                       </li>
                       <li>
-                        <h4 class="card-info-title">level</h4>
-                        <span>1</span>
+                        <h4 class="card-info-title">Level</h4>
+                        <span >{{level[2]}}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
+         </div>
         </div>
       </div>
     </section>
