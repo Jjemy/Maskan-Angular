@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Property } from '../Models/property';
 import { PropertyService } from '../Services/property.service';
 @Component({
@@ -6,6 +6,7 @@ import { PropertyService } from '../Services/property.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 }) 
+@Injectable()
 export class HomeComponent implements OnInit {
 
   properties:Property[]=[];
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   brooms:number[]=[];
   price:number[]=[];
   deal:string[]=[];
+  id:number[]=[];
 
   constructor(private propertyService:PropertyService) { }
   ngOnInit(): void {
@@ -33,10 +35,11 @@ export class HomeComponent implements OnInit {
           this.price[i]=this.properties[l-i]["price"];    
           this.brooms[i]=this.properties[l-i]["bathsNum"];    
           this.level[i]=this.properties[l-i]["level"];    
-          this.deal[i]=this.properties[0]["dealType"]["type"];
+          this.deal[i]=this.properties[l-i]["dealType"]["type"];
+          this.id[i]=this.properties[l-i]["propertyID"];
         }
         //test
-        //console.log(this.properties[0]["dealType"]["type"])
+        //console.log(this.properties[0]["propertyID"])
 
       },
       error: (response) => {

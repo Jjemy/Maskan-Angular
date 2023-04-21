@@ -17,6 +17,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
+import { SinglePropertyComponent } from './single-property/single-property.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     FooterComponent,
     AboutUsComponent,
-    HomeComponent
+    HomeComponent,
+    SinglePropertyComponent
   ],
   imports: [
     CommonModule,

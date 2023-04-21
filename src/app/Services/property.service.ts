@@ -28,4 +28,7 @@ export class PropertyService {
   getAllProperties():Observable<Property[]>{
     return this.http.get<Property[]>(this.URL+'GetAllProperties');
   }
+  getIdProperty(id:number):Observable<Property>{
+    return this.http.get<Property>(this.URL+'GetProperty/'+id);
+  }
 }
