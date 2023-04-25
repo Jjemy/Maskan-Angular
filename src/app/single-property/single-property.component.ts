@@ -19,8 +19,6 @@ export class SinglePropertyComponent implements OnInit {
   price:number;
   level:number;
   seller:string;
-  phone:number;
-  email:string;
   rooms:number;
   brooms:number;
   vr:string;
@@ -60,9 +58,7 @@ export class SinglePropertyComponent implements OnInit {
               this.level=response["level"]
               this.rooms=response["roomsNum"]
               this.brooms=response["bathsNum"]
-              this.email=response["seller"]["sellerEmail"]
               this.loc=response["location"]
-              this.phone=response["seller"]["phoneNum"]
               this.vr=response["vrLink"]
               this.type=response["type"]
               this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(response["googleMapsLink"]);

@@ -10,7 +10,11 @@
         <button class="slider-button next" (click)="next()"> > </button>
       </div>
       <div class="row justify-content-between">
+        <div>
+        <iframe [src]="safeUrl" width="550" height="350" frameborder="0" ></iframe>
+        </div>
         <div class="col-md-5 col-lg-4">
+          
       <div class="property-price d-flex justify-content-center foo">
         <div class="card-header-c d-flex">
           <div class="card-box-ico">
@@ -58,12 +62,13 @@
               <span>{{level}}</span>
             </li>
           </ul>
-          <iframe [src]="safeUrl" width="600" height="450" frameborder="0" style="border:0"></iframe>
         </div>
       <div>
-
       </div>
       </div>
       </div>
       </div>
     </body>
+    <div style="text-align: center;">
+      <h5>To Contact {{seller}} <a href="" style="color: crimson; right: 0;">Click Here</a></h5>
+    </div>
