@@ -1,17 +1,19 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PropertyService } from '../Services/property.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 
 @Component({
   selector: 'app-single-property',
+  template: '<iframe [src]="gmap"></iframe>',
   templateUrl: './single-property.component.html',
   styleUrls: ['./single-property.component.css',
 ]
   
 })
-@Injectable()
-  export class SinglePropertyComponent implements OnInit {
+export class SinglePropertyComponent implements OnInit {
 
   area:number;
   price:number;
@@ -25,7 +27,7 @@ import { PropertyService } from '../Services/property.service';
   img:any[]=[];
   loc:string;
   type:string;
-
+  safeUrl: SafeResourceUrl;
   currentIndex = 0;
   translateValue = 0;
 
@@ -43,7 +45,7 @@ import { PropertyService } from '../Services/property.service';
     }
   }
 
-  constructor(private route: ActivatedRoute,private propertyservice:PropertyService) { }
+  constructor(private route: ActivatedRoute,private propertyservice:PropertyService,private sanitizer: DomSanitizer) { }
 
    ngOnInit(): void {
     this.route.paramMap.subscribe({
@@ -63,11 +65,12 @@ import { PropertyService } from '../Services/property.service';
               this.phone=response["seller"]["phoneNum"]
               this.vr=response["vrLink"]
               this.type=response["type"]
+              this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(response["googleMapsLink"]);
               this.seller=response["seller"]["sellerName"]
+    
                 for(let i=0;i<response["images"].length;i++){
                   this.img[i]=response["images"][i]["imageLink"]
-                  console.log(response)
-                }
+               }
             }
           });
         }
