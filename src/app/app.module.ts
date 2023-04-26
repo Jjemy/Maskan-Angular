@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { SinglePropertyComponent } from './single-property/single-property.component';
+import { PropertyGridComponent } from './property-grid/property-grid.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SinglePropertyComponent } from './single-property/single-property.compo
     FooterComponent,
     AboutUsComponent,
     HomeComponent,
-    SinglePropertyComponent
+    SinglePropertyComponent,
+    PropertyGridComponent
   ],
   imports: [
     CommonModule,

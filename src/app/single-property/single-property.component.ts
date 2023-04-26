@@ -7,7 +7,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-single-property',
-  template: '<iframe [src]="gmap"></iframe>',
   templateUrl: './single-property.component.html',
   styleUrls: ['./single-property.component.css',
 ]
