@@ -14,13 +14,27 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class SinglePropertyComponent implements OnInit {
 
+  responsiveOptions:any[] = [
+    {
+        breakpoint: '1024px',
+        numVisible: 5
+    },
+    {
+        breakpoint: '768px',
+        numVisible: 3
+    },
+    {
+        breakpoint: '560px',
+        numVisible: 1
+    }
+  ];
   area:number;
   price:number;
   level:number;
   seller:string;
   rooms:number;
   brooms:number;
-  vr:string;
+  vr:SafeResourceUrl;
   img:any[]=[];
   loc:string;
   type:string;
@@ -42,6 +56,14 @@ export class SinglePropertyComponent implements OnInit {
     }
   }
 
+  sendWhatsAppMessage() {
+    const phoneNumber = "+201205637866";
+    var messageText="Hi, Im interested in the property "+this.loc;
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl);
+  }
+
   constructor(private route: ActivatedRoute,private propertyservice:PropertyService,private sanitizer: DomSanitizer) { }
 
    ngOnInit(): void {
@@ -58,7 +80,7 @@ export class SinglePropertyComponent implements OnInit {
               this.rooms=response["roomsNum"]
               this.brooms=response["bathsNum"]
               this.loc=response["location"]
-              this.vr=response["vrLink"]
+              this.vr=this.sanitizer.bypassSecurityTrustResourceUrl(response["vrLink"])
               this.type=response["type"]
               this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(response["googleMapsLink"]);
               this.seller=response["seller"]["sellerName"]

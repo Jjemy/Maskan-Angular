@@ -958,3 +958,18 @@ body {
 section{
     background-color: #ffffff;
 }
+
+h3 span{
+  font-weight: bold;
+  font-size: larger;
+}
+
+h3 a{
+  font-weight: bold;
+  text-decoration: none;
+  color: red;
+}
+
+h3 a:hover{
+  color: orange;
+}

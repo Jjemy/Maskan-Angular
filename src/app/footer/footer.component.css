@@ -194,10 +194,11 @@ body {
   ======================================*/
   
   .section-footer {
-    padding-top: 10px;
-    margin-top: 10px;
-    background: #cac7c7;
+    padding-top: 40px;
+    margin-top: 40px;
+    margin-bottom: 90px;
     height: 100px;
+    border-top: 1px solid #6A93FE;
   }
   
   .section-footer ul {
@@ -213,9 +214,14 @@ body {
   .section-footer .widget-a .w-title-a {
     margin-bottom: 1rem;
   }
+
+  img{
+    height: 90px;
+    width: 150px;
+    margin-top: -10px;
+  }
   
   footer {
-    background: #cac7c7;
     text-align: center;
     padding: 30px 0;
     height: 130px;
@@ -604,6 +610,9 @@ body {
       font-size: 1.3rem;
     }
   }
-section{
-    background-color: #f2f2f2;
-}
+
+  @media (max-width:768px) {
+    .section-footer{
+      margin-bottom: 350px;
+    }
+  }

@@ -19,6 +19,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { SinglePropertyComponent } from './single-property/single-property.component';
 import { PropertyGridComponent } from './property-grid/property-grid.component';
+import { LoginComponent } from './login/login.component';
+import { GalleriaModule } from 'primeng/galleria';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { PropertyGridComponent } from './property-grid/property-grid.component';
     AboutUsComponent,
     HomeComponent,
     SinglePropertyComponent,
-    PropertyGridComponent
+    PropertyGridComponent,
+    LoginComponent,
+    AnalysisComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +47,8 @@ import { PropertyGridComponent } from './property-grid/property-grid.component';
     CardModule,
     ButtonModule,
     RadioButtonModule,
-    DropdownModule
+    DropdownModule,
+    GalleriaModule
   ],
   providers: [
     PropertyService

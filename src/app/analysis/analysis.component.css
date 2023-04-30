@@ -1,0 +1,17 @@
+@media (max-width:1200px) {
+    iframe{
+        height: 800px;
+    }
+}
+
+@media (max-width:992px) {
+    iframe{
+        height: 600px;
+    }
+}
+
+@media (max-width:678px) {
+    iframe{
+        height: 400px;
+    }
+}

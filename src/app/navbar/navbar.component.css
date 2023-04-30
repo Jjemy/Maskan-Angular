@@ -1,740 +1,110 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #555555;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #000000;
-  }
-  
-  a {
-    color: #000000;
-    transition: all .5s ease;
-  }
-  
-  a:hover {
-    color: #ED5757;
-    text-decoration: none;
-  }
-  
-  .link-two {
-    color: #000000;
-    transition: all .5s ease;
-  }
-
-  .link-two:hover {
-    text-decoration: underline;
-    color: #000000;
-  }
-  
-  .link-one {
-    color: #000000;
-    transition: all .5s ease;
-  }
-  
-  .link-one:hover {
-    color: #000000;
-    text-decoration: none;
-  }
-  
-  .link-icon {
-    color: #000000;
-    font-weight: 500;
-  }
-  
-  .link-icon span {
-    font-size: 14px;
-    padding-left: 4px;
-    vertical-align: middle;
-  }
-  
-  .link-a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .link-a:hover {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .link-a span {
-    font-size: 18px;
-    vertical-align: middle;
-    margin-left: 5px;
-  }
-  
-  .text-brand {
-    color: #000000;
-    font-size: 2rem;
-    font-weight: 600;
-  }
-  
-  .color-a {
-    color: #000000;
-  }
-  
-  .color-b {
-    color: #ED5757;
-  }
-  
-  .color-d {
-    color: #adadad;
-  }
-  
-  .color-text-a {
-    color: #555555;
-  }
-  
-  .no-margin {
-    margin: 0;
-  }
-  
-  /*------/ Nav Pills  /------*/
-  
-  .nav-pills-a.nav-pills .nav-link {
-    color: #000000;
-    position: relative;
-    font-weight: 600;
-  }
-  
-  .nav-pills-a.nav-pills .nav-link.active {
-    background-color: transparent;
-  }
-  
-  .nav-pills-a.nav-pills .nav-link.active:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 2px;
-    background-color: #ED5757;
-    z-index: 2;
-  }
-  
-  
-  
-  /*------/ List a /------*/
-  
-  .list-a {
-    display: inline-block;
-    line-height: 2;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .list-a li {
-    position: relative;
-    width: 50%;
-    float: left;
-    padding-left: 25px;
-    padding-right: 5px;
-  }
-  
-  .list-a li:before {
-    content: '';
-    width: 10px;
-    height: 2px;
-    position: absolute;
-    background-color: #313131;
-    top: 15px;
-    left: 0;
-  }
-  
-  
-  .a {
-    color: #ED5757;
-    font-size: 1.3rem;
-  }
-  
-  
-  /*------/ Space Padding /------*/
-  
-  .section-t8 {
-    padding-top: 8rem;
-  }
-  
-  .section-t4 {
-    padding-top: 4rem;
-  }
-  
-  .section-t3 {
-    padding-top: 3rem;
-  }
-  
-  .section-b2 {
-    padding-bottom: 2rem;
-  }
-  
-  .section-tb85 {
-    padding: 8rem 0 5rem 0;
-  }
-  
- 
-  /*------/ Ul Resect /------*/
-  
-  .ul-resect ul,
-  .list-a ul,
-  .box-comments ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-  }
-
-  .navbar-brand img{
-    height: 90px;
-    width: 150px;
-
+  font-family: 'Poppins', sans-serif;
+  color: #555555;
 }
-  .navbar-default {
-    transition: all .5s ease-in-out;
-    background-color: #e0dcdc;
-    padding-top: 28px;
-    padding-bottom: 28px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    box-shadow: 1px 2px 15px rgba(100, 100, 100, 0.3);
-    height:100px;
-  }
   
-  .navbar-default .nav-search {
-    color: #000000;
-    font-size: 1.5rem;
-  }
-  
-  .navbar-default.navbar-reduce {
-    box-shadow: 1px 2px 15px rgba(100, 100, 100, 0.3);
-  }
-  
-  .navbar-default.navbar-trans,
-  .navbar-default.navbar-reduce {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
+a {
+  transition: all .5s ease;
+}
+
+a:hover {
+  color: #6A93FE;
+  text-decoration: none;
+}
+
+.navbar-brand img{
+  height: 90px;
+  width: 150px;
+}
+
+.navbar-default {
+  transition: all .5s ease-in-out;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.log{
+  color: #555555;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.030em;
+}
+
+.log span{
+  color: red;
+}
+
+.navbar-default.navbar-trans .nav-link,
+.navbar-default.navbar-reduce .nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.030em;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-default.navbar-trans .nav-link:before,
+.navbar-default.navbar-reduce .nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 0;
+  background-color: #ED5757;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+  transition: opacity .2s ease-out 0.3s, -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out, opacity .2s ease-out 0.3s;
+  transition: transform .2s ease-out, opacity .2s ease-out 0.3s, -webkit-transform .2s ease-out;
+}
+
+.navbar-default.navbar-trans .nav-link:hover:before,
+.navbar-default.navbar-reduce .nav-link:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+
+.navbar-default.navbar-trans .show > .nav-link:before,
+.navbar-default.navbar-trans .active > .nav-link:before,
+.navbar-default.navbar-trans .nav-link.show:before,
+.navbar-default.navbar-trans .nav-link.active:before,
+.navbar-default.navbar-reduce .show > .nav-link:before,
+.navbar-default.navbar-reduce .active > .nav-link:before,
+.navbar-default.navbar-reduce .nav-link.show:before,
+.navbar-default.navbar-reduce .nav-link.active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@media (min-width: 768px) {
   .navbar-default.navbar-trans .nav-item,
   .navbar-default.navbar-reduce .nav-item {
-    position: relative;
-    padding-right: 10px;
-    padding-bottom: 8px;
-    margin-left: 0;
+    margin-left: 15px;
   }
-  
-  .navbar-default.navbar-trans .nav-link,
-  .navbar-default.navbar-reduce .nav-link {
-    font-size: 1.1rem;
-    color: #000000;
-    font-weight: 600;
-    letter-spacing: 0.030em;
-    transition: all 0.1s ease-in-out;
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  .navbar-default.navbar-trans .nav-link:before,
-  .navbar-default.navbar-reduce .nav-link:before {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    z-index: 0;
-    background-color: #ED5757;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: right;
-    transform-origin: right;
-    transition: opacity .2s ease-out 0.3s, -webkit-transform .2s ease-out;
-    transition: transform .2s ease-out, opacity .2s ease-out 0.3s;
-    transition: transform .2s ease-out, opacity .2s ease-out 0.3s, -webkit-transform .2s ease-out;
-  }
-  
-  .navbar-default.navbar-trans .nav-link:hover,
-  .navbar-default.navbar-reduce .nav-link:hover {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-trans .nav-link:hover:before,
-  .navbar-default.navbar-reduce .nav-link:hover:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: left;
-    transform-origin: left;
-  }
-  
-  .navbar-default.navbar-trans .show > .nav-link:before,
-  .navbar-default.navbar-trans .active > .nav-link:before,
-  .navbar-default.navbar-trans .nav-link.show:before,
-  .navbar-default.navbar-trans .nav-link.active:before,
-  .navbar-default.navbar-reduce .show > .nav-link:before,
-  .navbar-default.navbar-reduce .active > .nav-link:before,
-  .navbar-default.navbar-reduce .nav-link.show:before,
-  .navbar-default.navbar-reduce .nav-link.active:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  
-  .navbar-default.navbar-trans .nav-link:before {
-    background-color: #ED5757;
-  }
-  
-  .navbar-default.navbar-trans .nav-link:hover {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-trans .show > .nav-link,
-  .navbar-default.navbar-trans .active > .nav-link,
-  .navbar-default.navbar-trans .nav-link.show,
-  .navbar-default.navbar-trans .nav-link.active {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-reduce {
-    transition: all .5s ease-in-out;
-    padding-top: 19px;
-    padding-bottom: 19px;
-  }
-  
-  .navbar-default.navbar-reduce .nav-link {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-reduce .nav-link:before {
-    background-color: #ED5757;
-  }
-  
-  .navbar-default.navbar-reduce .nav-link:hover {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-reduce .show > .nav-link,
-  .navbar-default.navbar-reduce .active > .nav-link,
-  .navbar-default.navbar-reduce .nav-link.show,
-  .navbar-default.navbar-reduce .nav-link.active {
-    color: #000000;
-  }
-  
-  .navbar-default.navbar-reduce .navbar-brand {
-    color: #000000;
-  }
-  
+
   .navbar-default .dropdown .dropdown-menu {
-    border-top: 0;
-    border-left: 4px solid #ED5757;
-    border-right: 0;
-    border-bottom: 0;
-    -webkit-transform: translate3d(0px, -40px, 0px);
-    transform: translate3d(0px, -40px, 0px);
-    opacity: 0;
-    filter: alpha(opacity=0);
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.3, 0.65, 0.355, 1) 0s, opacity 0.31s ease 0s, height 0s linear 0.36s;
-    margin: 0;
-    border-radius: 0;
-    padding: 12px 0;
+    border-top: 4px solid #ED5757;
+    border-left: 0;
+    display: block;
+    position: absolute;
+    box-shadow: 0 2px rgba(17, 16, 15, 0.1), 0 2px 10px rgba(20, 19, 18, 0.1);
   }
-  
-  .navbar-default .dropdown .dropdown-menu .dropdown-item {
-    padding: 12px 18px;
-    transition: all 500ms ease;
-    font-weight: 600;
-    min-width: 220px;
-  }
-  
-  .navbar-default .dropdown .dropdown-menu .dropdown-item:hover {
-    background-color: #ffffff;
-    color: #ED5757;
-    transition: all 500ms ease;
-  }
-  
-  .navbar-default .dropdown .dropdown-menu .dropdown-item.active {
-    background-color: #ffffff;
-    color: #ED5757;
-  }
-  
-  .navbar-default .dropdown:hover .dropdown-menu {
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    transform: translate3d(0px, 0px, 0px);
-    visibility: visible;
-    opacity: 1;
-    filter: alpha(opacity=1);
-  }
-  
-  @media (min-width: 576px) {
-    .intro .intro-title {
-      font-size: 3.5rem;
-    }
-  
-    .intro .intro-subtitle.intro-price {
-      font-size: 1.3rem;
-    }
-  
-    .about-img-box {
-      padding-left: 4rem;
-    }
-  
-    .sinse-box {
-      padding: 1.5rem 2.5rem;
-      bottom: 20px;
-    }
-  
-    .sinse-box .sinse-title {
-      font-size: 1.3rem;
-    }
-  
-    .sinse-box p {
-      font-size: .8rem;
-    }
-  
-    .sinse-box p {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .link-a {
-      font-size: .9rem;
-    }
-  
-    .link-a span {
-      font-size: 1.5rem;
-    }
-  
-    .navbar-default.navbar-trans .nav-item,
-    .navbar-default.navbar-reduce .nav-item {
-      margin-left: 15px;
-    }
-  
-    .navbar-default .dropdown .dropdown-menu {
-      border-top: 4px solid #ED5757;
-      border-left: 0;
-      display: block;
-      position: absolute;
-      box-shadow: 0 2px rgba(17, 16, 15, 0.1), 0 2px 10px rgba(20, 19, 18, 0.1);
-    }
-  
-    .box-collapse {
-      width: 50%;
-    }
-  
-    .intro .owl-theme .owl-dots {
-      right: 200px;
-    }
-  
-    .intro .intro-body {
-      padding-left: 2rem;
-    }
-  
-    .intro .intro-title-top {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-  
-    .intro .intro-title {
-      font-size: 4rem;
-    }
-  
-    .intro .intro-subtitle {
-      font-size: 2.5rem;
-    }
-  
-    .intro .intro-subtitle.intro-price {
-      padding-top: 2rem;
-      font-size: 1.5rem;
-    }
-  
-    .intro-single .title-single-box .title-single {
-      font-size: 2.1rem;
-    }
-  
-    .grid .card-box-a,
-    .grid .card-box-b,
-    .grid .card-box-c,
-    .grid .card-box-d {
-      margin-bottom: 2.5rem;
-    }
-  
-    .card-box-a:hover .img-a,
-    .card-box-a:hover .img-b,
-    .card-box-b:hover .img-a,
-    .card-box-b:hover .img-b {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
-    }
-  
-    .card-box-a .price-a,
-    .card-box-b .price-a {
-      font-size: .9rem;
-    }
-  
-    .card-box-a:hover .card-overlay-a-content {
-      bottom: 60px;
-    }
-  
-    .card-box-a:hover .card-body-a {
-      padding-bottom: 1rem;
-    }
-  
-    .card-overlay-a-content {
-      bottom: -20px;
-    }
-  
-    .card-header-a .card-title-a {
-      font-size: 1.3rem;
-    }
-  
-    .card-info .card-info-title {
-      font-size: .9rem;
-    }
-  
-    .card-info li span {
-      font-size: .8rem;
-    }
-  
-    .card-header-b {
-      bottom: 0px;
-    }
-  
-    .card-header-b .title-2 {
-      font-size: 1rem;
-    }
-  
-    .card-header-b .date-b {
-      font-size: .9rem;
-    }
-  
-    .box-comments .list-comments .comment-author {
-      font-size: 1.5rem;
-    }
-  
-    .title-c {
-      font-size: 1.8rem;
-    }
-  
-    .card-box-d .card-overlay-hover {
-      padding: 5px 15px 5px 10px;
-    }
-  
-    .card-box-d .title-d {
-      font-size: 1.1rem;
-      margin: .5rem 0;
-    }
-  
-    .card-box-d .content-d {
-      font-size: .8rem;
-      margin: .5rem 0;
-    }
-  
-    .card-box-d .card-body-d p {
-      margin-bottom: 8px;
-      font-size: .8rem;
-    }
-  
-    .about-img-box {
-      padding-left: 5rem;
-    }
-  
-    .sinse-box {
-      padding: 1.5rem 3rem;
-    }
-  
-    .sinse-box .sinse-title {
-      font-size: 1.8rem;
-    }
-  }
-  
-  @media (min-width: 768px) and (min-width: 768px) {
-    .card-box-a:hover .card-overlay-a-content {
-      bottom: 60px;
-    }
-  }
-  
-  @media (min-width: 768px) and (min-width: 992px) {
-    .card-box-a:hover .card-overlay-a-content {
-      bottom: 64px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .link-a {
-      font-size: 1rem;
-    }
-  
-    .link-a span {
-      font-size: 18px;
-    }
-  
-    .list-a li {
-      width: 33.333%;
-    }
-  
-    .intro .intro-title-top {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-  
-    .intro .intro-title {
-      font-size: 4.5rem;
-    }
-  
-    .intro .intro-subtitle.intro-price {
-      padding-top: 3rem;
-    }
-  
-    .intro-single .title-single-box .title-single {
-      font-size: 2.5rem;
-    }
-  
-    .card-box-a .price-a,
-    .card-box-b .price-a {
-      font-size: 1rem;
-    }
-  
-    .card-overlay-a-content {
-      bottom: 0px;
-    }
-  
-    .card-header-a .card-title-a {
-      font-size: 2rem;
-    }
-  
-    .card-info .card-info-title {
-      font-size: 1rem;
-    }
-  
-    .card-info li span {
-      font-size: 1rem;
-    }
-  
-    .card-header-b {
-      bottom: 20px;
-    }
-  
-    .card-header-b .title-2 {
-      font-size: 1.6rem;
-    }
-  
-    .card-header-b .date-b {
-      font-size: 1rem;
-    }
-  
-    .title-c {
-      font-size: 2.5rem;
-    }
-  
-    .card-box-d .card-overlay-hover {
-      padding: 5px 40px 5px 35px;
-    }
-  
-    .card-box-d .title-d {
-      font-size: 1.5rem;
-      margin: 1rem 0;
-    }
-  
-    .card-box-d .card-body-d p {
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-  
-    .sinse-box {
-      padding: 3rem 4.5rem;
-    }
-  
-    .sinse-box .sinse-title {
-      font-size: 2.2rem;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .card-box-d .card-overlay-hover {
-      padding: 15px 40px 5px 35px;
-    }
-  
-    .card-box-d .title-d {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
-  }
-  
-  @media (max-width: 991px) {
-    .property-contact {
-      margin-top: 2.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .back-to-top {
-      bottom: 15px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .text-brand {
-      font-size: 1.8rem;
-    }
-  
-    .section-t8 {
-      padding-top: 4rem;
-    }
-  
-    .section-t4 {
-      padding-top: 2rem;
-    }
-  
-    .section-md-t3 {
-      padding-top: 3rem;
-    }
-  
-    .section-tb85 {
-      padding: 4rem 0 2.5rem 0;
-    }
-  
-    .intro-single {
-      padding-top: 9rem;
-    }
-  
-    .card-box-a,
-    .card-box-b,
-    .card-box-c,
-    .card-box-d {
-      margin-bottom: 2.5rem;
-    }
-  
-    .card-box-a .card-overlay-a-content {
-      bottom: 65px;
-    }
-  
-    .card-box-a .card-body-a {
-      padding-bottom: 1rem;
-    }
-  
-    .property-agent {
-      margin-top: 2.5rem;
-    }
-  
-    .card-box-c {
-      margin-bottom: 2rem;
-    }
-  
-    .card-body-c {
-      padding: 0;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    .box-collapse .title-box-d {
-      left: 35px;
-    }
-  
-    .box-collapse .title-box-d .title-d {
-      font-size: 1.3rem;
-    }
-  }
+}
+
+.navbar{
+  border-bottom: 1px solid red;
+  box-shadow: 0 5px 21px 0 rgb(254 119 101 / 20%);
+}
+
+.nav-link.active{
+  color: #6A93FE;
+}

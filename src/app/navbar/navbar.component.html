@@ -1,26 +1,31 @@
-<div class="click-closed"></div>
-
-<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="../../assets/Light-transparent.png" alt="Light themed logo of the company">
-        </a>
-
-      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+      <a class="navbar-brand" href="/">
+          <img src="../../assets/Light-transparent.png" alt="Light themed logo of the company">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a id="home" class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/about">About Us</a>
+            <a id="about" class="nav-link" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Analysis</a>
+            <a id="analysis" class="nav-link" href="/analysis">Analysis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
+            <a id="properties" class="nav-link" href="/property-grid">Properties</a>
+          </li>
+          <li *ngIf="loggedIn()" class="nav-item">
+            <a id="add" class="nav-link" href="/add-property">Add Property</a>
           </li>
         </ul>
       </div>
+      <a *ngIf="!loggedIn()" href="/login" class="log">Login <span>Admin</span></a>
+      <a *ngIf="loggedIn()" href="/" (click)="loggedOut()" class="log"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
     </div>
   </nav>

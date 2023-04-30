@@ -61,7 +61,7 @@ export class AddPropertyComponent {
     this.seller={sellerName, sellerEmail, phoneNum, sellerAddress, nationalID};
     this.property={Location, GoogleMapsLink, Type, Level, Furnished, Area, RoomsNum, BathsNum, Price, dealTypeID, sellerID:0};
     if(this.SellForm.valid){
-      if(this.sellers.find(a=>a.nationalID==this.Form.nationalID)){
+      if(this.sellers.length>0 && this.sellers.find(a=>a.nationalID==this.Form.nationalID)){
         this.sellers.forEach(seller => {
           if(seller.nationalID==this.Form.nationalID){
             this.property.sellerID=seller.sellerID;
@@ -72,7 +72,6 @@ export class AddPropertyComponent {
         try {
           const seller = await this.userService.AddSeller(this.seller).toPromise();
           this.property.sellerID = (seller as any).sellerID;
-          console.log(this.property);
         } catch (error) {
           this.errMsg = error.error;
         }
@@ -107,9 +106,9 @@ export class AddPropertyComponent {
     this.SellForm.get('Price').markAsPristine();
     this.SellForm.get('Price').setErrors(null);
     this.Form=Object.assign({},this.SellForm.value);
-    this.Form.Furnished=this.Form.Furnished="true"?true:false;
+    this.Form.Furnished=this.Form.Furnished=="true"?true:false;
     let Furnished=this.Form.Furnished==true?1:0;
-    let DealType=this.Form.Type=="Rental"?1:0;
+    let DealType=this.Form.DealType=="Rental"?1:0;
     let Region=this.Form.Region.value;
     let Type=this.Form.Type.value;
     let {Level, Area, RoomsNum, BathsNum}=this.Form;

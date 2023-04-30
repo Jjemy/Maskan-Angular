@@ -5,6 +5,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { SinglePropertyComponent } from './single-property/single-property.component';
 import { PropertyGridComponent } from'./property-grid/property-grid.component';
+import { LoginComponent } from './login/login.component';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path:'add-property',component:AddPropertyComponent},
   {path:'',component:HomeComponent},
   {path:'single-property/:id',component:SinglePropertyComponent},
-  {path:'property-grid',component:PropertyGridComponent}
+  {path:'property-grid',component:PropertyGridComponent},
+  {path:'login',component:LoginComponent},
+  {path:'analysis',component:AnalysisComponent}
 ];
 
 @NgModule({
