@@ -59,3 +59,11 @@ input{
 .p-button-danger{
     margin-left: 70px;
 }
+
+h5{
+    font-size: 17px;
+}
+
+h5 span{
+    color: #ED5757;
+}

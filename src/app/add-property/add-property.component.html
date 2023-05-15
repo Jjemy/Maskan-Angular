@@ -77,18 +77,6 @@
                         You can't enter negative numbers.
                     </div>
                 </div>
-                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end">
-                    <p-dropdown [options]="regions" optionLabel="label" formControlName="Region" [filter]="true" filterBy="label" placeholder="Select a Country"></p-dropdown>
-                    <div style="color: crimson;" *ngIf="(submitted && this.SellForm.get('Region').hasError('required')) || (this.SellForm.get('Region').touched && this.SellForm.get('Region').hasError('required'))">
-                        Required
-                    </div>
-                </div>
-                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end">
-                    <p-dropdown [options]="categories" optionLabel="label" formControlName="Type" [filter]="true" filterBy="label" placeholder="Select a Category"></p-dropdown>
-                    <div style="color: crimson;" *ngIf="(submitted && this.SellForm.get('Type').hasError('required')) || (this.SellForm.get('Type').touched && this.SellForm.get('Type').hasError('required'))">
-                        Required
-                    </div>
-                </div>
                 <div class="col-6 col-lg-4">
                     <input placeholder ="Area in square metre" type="number" min="40" formControlName="Area">
                     <div style="color: crimson;" *ngIf="(submitted && this.SellForm.get('Area').hasError('required')) || (this.SellForm.get('Area').touched && this.SellForm.get('Area').hasError('required'))">
@@ -107,14 +95,14 @@
                         Required
                     </div>
                 </div>
-                <div class="col-6 col-lg-4 d-flex align-items-end">
+                <div class="col-6 col-lg-4 d-flex align-items-center">
                     <div class="d-flex flex-wrap gap-3">
                         <div class="flex align-items-center">
-                            <p-radioButton name="DealType"  value="Rental" formControlName="DealType"></p-radioButton>
+                            <p-radioButton name="DealType" (onClick)="enableDropDown();rentJson()"  value="Rental" formControlName="DealType"></p-radioButton>
                             <label for="ingredient1" class="ml-2">Rental</label>
                         </div>
                         <div class="flex align-items-center">
-                            <p-radioButton name="DealType" value="Purchase" formControlName="DealType"></p-radioButton>
+                            <p-radioButton name="DealType" (onClick)="enableDropDown();sellJson()" value="Purchase" formControlName="DealType"></p-radioButton>
                             <label for="ingredient2" class="ml-2">Purchase</label>
                         </div>
                         <div style="color: crimson;" *ngIf="submitted && this.SellForm.get('DealType').hasError('required')">
@@ -122,7 +110,7 @@
                         </div>
                     </div>                    
                 </div>
-                <div class="col-6 col-lg-4 d-flex align-items-end mt-3">
+                <div class="col-6 col-lg-4 d-flex align-items-center">
                     <div class="d-flex flex-wrap gap-3">
                         <div class="flex align-items-center">
                             <p-radioButton name="Furnished" value="true" formControlName="Furnished"></p-radioButton>
@@ -136,6 +124,18 @@
                             Required
                         </div>
                     </div>   
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end mt-3">
+                    <p-dropdown [options]="regions" optionLabel="label" formControlName="Region" [filter]="true" filterBy="label" placeholder="Select a Country" [disabled]="SellForm.get('Region').disabled"></p-dropdown>
+                    <div style="color: crimson;" *ngIf="(submitted && this.SellForm.get('Region').hasError('required')) || (this.SellForm.get('Region').touched && this.SellForm.get('Region').hasError('required'))">
+                        Required
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-end">
+                    <p-dropdown [options]="categories" optionLabel="label" formControlName="Type" [filter]="true" filterBy="label" placeholder="Select a Category"></p-dropdown>
+                    <div style="color: crimson;" *ngIf="(submitted && this.SellForm.get('Type').hasError('required')) || (this.SellForm.get('Type').touched && this.SellForm.get('Type').hasError('required'))">
+                        Required
+                    </div>
                 </div>
                 <div *ngFor="let item of Images.controls;let i=index" formArrayName="imageLinks" class="col-12" style="padding: 0 !important;">
                     <div class="row" style="margin-left: 0 !important;">
@@ -156,6 +156,16 @@
                 <div class="col-4 col-lg-2"><p-button (onClick)="predictPrice()" label="Predict Price"></p-button></div>
             </div>
         </div>
+        <h5 class="mx-5 px-3 mt-3">
+            <span>Important: -</span>
+            <ul>
+                <li>You should select whether your apartment is for rent or sell before choosing its region</li>
+                <li>This dropdown is used for price prediction ML model</li>
+                <li>For more precise results we don't support all regions in our model</li>
+                <li>Some regions used to predict properties for rent, Other regions to predict properties for purchase</li>
+                <li>This is a demo version, In future versions we will support all regions</li>
+            </ul>
+        </h5>
         <button pButton pRipple label="Submit" type="submit" icon="pi pi-check" class="p-button-danger"></button>
     </form>
 </p-card>

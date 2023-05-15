@@ -56,6 +56,7 @@ export class AddPropertyComponent {
     this.Form.dealTypeID=this.Form.DealType=="Rental"?1:2;
     this.Form.Furnished=this.Form.Furnished=="true"?true:false;
     this.Form.Type=this.Form.Type.label;
+    this.Form.Price=this.price;
     let {sellerName, sellerEmail, phoneNum, sellerAddress, nationalID}=this.Form;
     let {Location, GoogleMapsLink, Type, Level, Furnished, Area, RoomsNum, BathsNum, Price, dealTypeID}=this.Form;
     this.seller={sellerName, sellerEmail, phoneNum, sellerAddress, nationalID};
@@ -114,7 +115,7 @@ export class AddPropertyComponent {
     let {Level, Area, RoomsNum, BathsNum}=this.Form;
     this.modelInput={Type, Level, Furnished, Area, RoomsNum, BathsNum, Region, DealType};
     this.propertyService.predictPrice(this.modelInput).subscribe(a=>
-      this.price=parseInt(Object.values(a)[0])
+      this.price=parseInt(a.toString())
     );
   }
 
@@ -143,7 +144,7 @@ export class AddPropertyComponent {
       Type:['', Validators.required],
       Level:['', [Validators.required, Validators.max(80), Validators.min(0)]],
       Furnished:['', Validators.required],
-      Region:['', Validators.required],
+      Region:[{value:'',disabled:true}, Validators.required],
       Area:['', Validators.required],
       RoomsNum:['', Validators.required],
       BathsNum:['', Validators.required],
@@ -152,6 +153,22 @@ export class AddPropertyComponent {
       dealTypeID: ['', Validators.nullValidator],
       imageLinks: new FormArray([],Validators.required)
     })
+  }
+
+  enableDropDown(){
+    this.SellForm.get('Region').enable();
+  }
+
+  sellJson(){
+    this.http.get('../../assets/sell.json').subscribe((data: any) => {
+      this.regions = data.sell;
+    });
+  }
+
+  rentJson(){
+    this.http.get('../../assets/rent.json').subscribe((data: any) => {
+      this.regions = data.rent;
+    });
   }
 
   ngOnInit(): void {

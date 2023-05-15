@@ -1,0 +1,388 @@
+{
+  "rent": [
+    {
+      "label": "new cairo - el tagamoa",
+      "value": 5
+    },
+    {
+      "label": "nasr city",
+      "value": 3
+    },
+    {
+      "label": "hadayek al-ahram",
+      "value": 1
+    },
+    {
+      "label": "sheikh zayed",
+      "value": 6
+    },
+    {
+      "label": "6th of october",
+      "value": 4
+    },
+    {
+      "label": "kafr abdo",
+      "value": 3
+    },
+    {
+      "label": "rehab city",
+      "value": 5
+    },
+    {
+      "label": "madinaty",
+      "value": 4
+    },
+    {
+      "label": "heliopolis",
+      "value": 3
+    },
+    {
+      "label": "smoha",
+      "value": 3
+    },
+    {
+      "label": "roushdy",
+      "value": 3
+    },
+    {
+      "label": "hurghada",
+      "value": 4
+    },
+    {
+      "label": "hadayek 6th of october",
+      "value": 2
+    },
+    {
+      "label": "hadayek helwan",
+      "value": 1
+    },
+    {
+      "label": "faisal",
+      "value": 2
+    },
+    {
+      "label": "haram",
+      "value": 1
+    },
+    {
+      "label": "bacchus",
+      "value": 1
+    },
+    {
+      "label": "badr city",
+      "value": 2
+    },
+    {
+      "label": "stanley",
+      "value": 4
+    },
+    {
+      "label": "maadi",
+      "value": 3
+    },
+    {
+      "label": "raml station",
+      "value": 4
+    },
+    {
+      "label": "mohandessin",
+      "value": 5
+    },
+    {
+      "label": "shorouk city",
+      "value": 1
+    },
+    {
+      "label": "shatby",
+      "value": 5
+    },
+    {
+      "label": "hadayek al-kobba",
+      "value": 2
+    },
+    {
+      "label": "mokattam",
+      "value": 3
+    },
+    {
+      "label": "obour city",
+      "value": 1
+    },
+    {
+      "label": "sheraton",
+      "value": 3
+    },
+    {
+      "label": "zahraa al maadi",
+      "value": 3
+    },
+    {
+      "label": "nakheel",
+      "value": 1
+    },
+    {
+      "label": "sidi beshr",
+      "value": 2
+    },
+    {
+      "label": "new damietta",
+      "value": 1
+    },
+    {
+      "label": "mandara",
+      "value": 2
+    },
+    {
+      "label": "10th of ramadan",
+      "value": 1
+    },
+    {
+      "label": "helmeyat el zaytoun",
+      "value": 2
+    },
+    {
+      "label": "gianaclis",
+      "value": 2
+    },
+    {
+      "label": "laurent",
+      "value": 3
+    },
+    {
+      "label": "asafra",
+      "value": 1
+    },
+    {
+      "label": "sayeda zeinab",
+      "value": 1
+    },
+    {
+      "label": "shubra",
+      "value": 2
+    },
+    {
+      "label": "sidi gaber",
+      "value": 2
+    },
+    {
+      "label": "agami",
+      "value": 1
+    },
+    {
+      "label": "abasiya",
+      "value": 2
+    },
+    {
+      "label": "downtown cairo",
+      "value": 5
+    },
+    {
+      "label": "dokki",
+      "value": 5
+    },
+    {
+      "label": "miami",
+      "value": 2
+    },
+    {
+      "label": "ain shams",
+      "value": 1
+    },
+    {
+      "label": "maryotaya",
+      "value": 1
+    },
+    {
+      "label": "asyut city",
+      "value": 2
+    },
+    {
+      "label": "glim",
+      "value": 3
+    },
+    {
+      "label": "katameya",
+      "value": 2
+    },
+    {
+      "label": "moharam bik",
+      "value": 2
+    },
+    {
+      "label": "tanta",
+      "value": 1
+    },
+    {
+      "label": "victoria",
+      "value": 1
+    },
+    {
+      "label": "mansura",
+      "value": 1
+    },
+    {
+      "label": "azarita",
+      "value": 6
+    },
+    {
+      "label": "al ibrahimiyyah",
+      "value": 4
+    },
+    {
+      "label": "seyouf",
+      "value": 1
+    },
+    {
+      "label": "west somid",
+      "value": 3
+    },
+    {
+      "label": "saba pasha",
+      "value": 3
+    },
+    {
+      "label": "zezenia",
+      "value": 3
+    },
+    {
+      "label": "zagazig",
+      "value": 1
+    },
+    {
+      "label": "aswan city",
+      "value": 3
+    },
+    {
+      "label": "camp caesar",
+      "value": 5
+    },
+    {
+      "label": "gesr al suez",
+      "value": 2
+    },
+    {
+      "label": "sharq district",
+      "value": 2
+    },
+    {
+      "label": "sporting",
+      "value": 3
+    },
+    {
+      "label": "cleopatra",
+      "value": 3
+    },
+    {
+      "label": "gouna",
+      "value": 1
+    },
+    {
+      "label": "ismailia city",
+      "value": 2
+    },
+    {
+      "label": "san stefano",
+      "value": 9
+    },
+    {
+      "label": "manshiyya",
+      "value": 2
+    },
+    {
+      "label": "musturad",
+      "value": 1
+    },
+    {
+      "label": "montazah",
+      "value": 2
+    },
+    {
+      "label": "farafra",
+      "value": 3
+    },
+    {
+      "label": "bolkly",
+      "value": 2
+    },
+    {
+      "label": "sharm al-sheikh",
+      "value": 1
+    },
+    {
+      "label": "shubra al-khaimah",
+      "value": 1
+    },
+    {
+      "label": "mostakbal city",
+      "value": 2
+    },
+    {
+      "label": "fleming",
+      "value": 2
+    },
+    {
+      "label": "borg al-arab",
+      "value": 2
+    },
+    {
+      "label": "helwan",
+      "value": 1
+    },
+    {
+      "label": "maamoura",
+      "value": 3
+    },
+    {
+      "label": "agouza",
+      "value": 4
+    },
+    {
+      "label": "almazah",
+      "value": 4
+    },
+    {
+      "label": "el fostat",
+      "value": 3
+    },
+    {
+      "label": "abu qir",
+      "value": 2
+    },
+    {
+      "label": "al manial",
+      "value": 3
+    },
+    {
+      "label": "dawahy district",
+      "value": 2
+    },
+    {
+      "label": "al hadrah",
+      "value": 2
+    },
+    {
+      "label": "zohour district",
+      "value": 2
+    },
+    {
+      "label": "ard el lewa",
+      "value": 2
+    },
+    {
+      "label": "zamalek",
+      "value": 10
+    },
+    {
+      "label": "bahray - anfoshy",
+      "value": 1
+    },
+    {
+      "label": "new heliopolis",
+      "value": 8
+    },
+    {
+      "label": "new nozha",
+      "value": 2
+    }
+  ]
+}
